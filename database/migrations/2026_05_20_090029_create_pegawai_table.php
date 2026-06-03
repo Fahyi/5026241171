@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pegawai', function (Blueprint $table) {
-            $table->id(); // Ini akan membuat kolom 'id' otomatis (Primary Key)
-            $table->string('nama'); // Kolom untuk nama pegawai
-            $table->string('jabatan'); // Kolom untuk jabatan
-            $table->text('alamat'); // Kolom untuk alamat
-            $table->timestamps(); // Kolom created_at dan updated_at bawaan Laravel
+            $table->increments('pegawai_id'); // Primary Key
+            $table->string('pegawai_nama'); // Kolom untuk nama pegawai
+            $table->string('pegawai_jabatan'); // Kolom untuk jabatan
+            $table->integer('pegawai_umur'); // Kolom untuk umur
+            $table->text('pegawai_alamat'); // Kolom untuk alamat
         });
     }
 
