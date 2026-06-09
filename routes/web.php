@@ -77,6 +77,20 @@ Route::get('menu', function () {
 	return view('menu');
 });
 
+use App\Http\Controllers\DVDController;
+
+Route::get('/dvd', [DVDController::class, 'index']);
+Route::get('/dvd/tambah', [DVDController::class, 'tambah']);
+Route::post('/dvd/store', [DVDController::class, 'store']);
+Route::get('/dvd/edit/{id}', [DVDController::class, 'edit']);
+Route::post('/dvd/update', [DVDController::class, 'update']);
+Route::get('/dvd/hapus/{id}', [DVDController::class, 'hapus']);
+Route::get('/dvd/cari', [DVDController::class, 'cari']);
+
+Route::get('/menu', function () {
+    return view('menu');
+});
+
 Route::get('/pegawai', [PegawaiDBController::class, 'index']);
 Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah']);
 Route::post('/pegawai/store', [PegawaiDBController::class, 'store']);
