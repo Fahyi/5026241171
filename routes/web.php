@@ -91,6 +91,17 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
+use App\Http\Controllers\SiswaController;
+
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::get('/siswa/cari', [SiswaController::class, 'cari'])->name('siswa.cari');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+
 Route::get('/pegawai', [PegawaiDBController::class, 'index']);
 Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah']);
 Route::post('/pegawai/store', [PegawaiDBController::class, 'store']);
