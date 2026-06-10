@@ -28,7 +28,11 @@
 			<td>
 				<a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning">Edit</a>
 				|
-				<a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>
+				<form action="/pegawai/hapus/{{ $p->pegawai_id }}" method="POST" style="display:inline">
+					@csrf
+					@method('DELETE')
+					<button type="submit" class="btn btn-danger" onclick="return confirm('Yakin hapus?')">Hapus</button>
+				</form>
 			</td>
 		</tr>
 		@endforeach

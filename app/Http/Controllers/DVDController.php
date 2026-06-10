@@ -27,7 +27,11 @@ class DVDController extends Controller
 	// method untuk insert data ke table dvd
 	public function store(Request $request)
 	{
-		// insert data ke table dvd
+		$request->validate([
+			'merk' => 'required|string|max:30',
+			'stock' => 'required|integer|min:0',
+		]);
+
 		DB::table('dvd')->insert([
 			'merkdvd' => $request->merk,
 			'stockdvd' => $request->stock,
@@ -50,7 +54,12 @@ class DVDController extends Controller
 	// update data dvd
 	public function update(Request $request)
 	{
-		// update data dvd
+		$request->validate([
+			'id' => 'required|integer',
+			'merk' => 'required|string|max:30',
+			'stock' => 'required|integer|min:0',
+		]);
+
 		DB::table('dvd')->where('kodedvd',$request->id)->update([
 			'merkdvd' => $request->merk,
 			'stockdvd' => $request->stock,

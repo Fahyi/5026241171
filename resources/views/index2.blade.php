@@ -30,14 +30,17 @@
 			<td>
 				<a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
 				|
-				<a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+				<form action="/pegawai/hapus/{{ $p->pegawai_id }}" method="POST" style="display:inline">
+					@csrf
+					@method('DELETE')
+					<button type="submit" onclick="return confirm('Yakin hapus?')">Hapus</button>
+				</form>
 			</td>
 		</tr>
 		@endforeach
 	</table>
 
-    <?php
-    echo $pegawai;?>
+    {{ $pegawai->links() }}
 
 
 </body>

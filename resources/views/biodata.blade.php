@@ -10,8 +10,8 @@
     <h1>Tutorial Laravel</h1>
     <a href="https://www.malasngoding.com/category/laravel">www.malasngoding.com</a>
 
-    <p>Nama : {{ $nama }} - <?php echo $nama; ?></p>
-    <p>Umur : {{ $umur }} - <?php echo $umur; ?></p>
+    <p>Nama : {{ $nama }}</p>
+    <p>Umur : {{ $umur }}</p>
     <p>Mata Pelajaran</p>
     <ul>
 

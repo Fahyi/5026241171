@@ -26,7 +26,11 @@
 			<td>
 				<a href="/dvd/edit/{{ $p->kodedvd }}" class="btn btn-warning">Edit</a>
 				|
-				<a href="/dvd/hapus/{{ $p->kodedvd }}" class="btn btn-danger">Hapus</a>
+				<form action="/dvd/hapus/{{ $p->kodedvd }}" method="POST" style="display:inline">
+					@csrf
+					@method('DELETE')
+					<button type="submit" class="btn btn-danger" onclick="return confirm('Yakin hapus?')">Hapus</button>
+				</form>
 			</td>
 		</tr>
 		@endforeach

@@ -84,7 +84,7 @@ Route::get('/dvd/tambah', [DVDController::class, 'tambah']);
 Route::post('/dvd/store', [DVDController::class, 'store']);
 Route::get('/dvd/edit/{id}', [DVDController::class, 'edit']);
 Route::post('/dvd/update', [DVDController::class, 'update']);
-Route::get('/dvd/hapus/{id}', [DVDController::class, 'hapus']);
+Route::delete('/dvd/hapus/{id}', [DVDController::class, 'hapus']);
 Route::get('/dvd/cari', [DVDController::class, 'cari']);
 
 Route::get('/menu', function () {
@@ -96,7 +96,7 @@ Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah']);
 Route::post('/pegawai/store', [PegawaiDBController::class, 'store']);
 Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
-Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
+Route::delete('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
 Route::get('/', function () {
     return view('template');
